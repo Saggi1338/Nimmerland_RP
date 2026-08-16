@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knochenbeißer — Einleitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure:900px;        /* <<< BREITE der Spalte. Größer = breiter. Kleiner = schmaler. */
+    --panel:#0d1326;
+    --panel-2:#111a30;
+    --moonlight:#dfe6f6;
+    --mist:#9aa8c6;
+    --mist-dim:#6d7a98;
+    --moon:#c3d2ef;
+    --moon-deep:#5f74a8;
+    --gold:#c9a95f;
+    --gold-dim:#8a7440;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --body:'Spectral',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:transparent;color:var(--moonlight);font-family:var(--body);
+    font-weight:400;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:hidden;}
+  .shell{max-width:calc(var(--measure) + 68px);margin:0 auto;padding:clamp(16px,3vw,30px) clamp(14px,3vw,34px) 50px;}
+
+  .tribe-head{max-width:var(--measure);margin:0 auto clamp(24px,4vw,40px);text-align:center;}
+  .eyebrow{font-family:var(--display);font-style:italic;letter-spacing:.24em;text-transform:uppercase;
+    font-size:clamp(.7rem,1.8vw,.86rem);color:var(--gold);margin:0 0 8px;padding-left:.24em;}
+  .tribe-head h1{font-family:var(--display);font-weight:500;letter-spacing:.12em;margin:0;
+    font-size:clamp(2.4rem,6.5vw,4rem);line-height:1;color:var(--moonlight);text-shadow:0 0 30px rgba(150,180,240,.35);}
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 10px;color:var(--gold);}
+  .rule .line{height:1px;width:clamp(40px,10vw,90px);background:linear-gradient(90deg,transparent,var(--gold-dim),var(--gold));}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),var(--gold-dim),transparent);}
+  .rule .glyph{font-size:1.05rem;filter:drop-shadow(0 0 6px rgba(201,169,95,.5));}
+  .tribe-head .sub{font-family:var(--display);font-style:italic;font-weight:400;letter-spacing:.3em;
+    text-transform:uppercase;font-size:clamp(.75rem,2vw,1.02rem);color:var(--mist);margin:0;padding-left:.3em;}
+
+  main{max-width:var(--measure);margin:0 auto;}
+  section{margin:8px 0 38px;}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4vw,2.4rem);
+    letter-spacing:.03em;color:var(--gold);margin:0 0 4px;}
+  h2 + .under{height:1px;background:linear-gradient(90deg,rgba(201,169,95,.5),transparent);margin-bottom:22px;}
+  h3{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.6vw,1.4rem);
+    letter-spacing:.05em;color:var(--moon);margin:26px 0 6px;}
+  p{margin:0 0 18px;color:#cdd6ec;font-weight:400;}
+
+  .lead::first-letter{font-family:var(--display);font-weight:600;float:left;font-size:4.2rem;line-height:.78;
+    padding:6px 12px 0 0;color:var(--gold);text-shadow:0 0 18px rgba(201,169,95,.35);}
+
+  .stats{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0 6px;}
+  .stat{flex:1 1 220px;background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid rgba(201,169,95,.22);border-radius:3px;padding:18px 20px;}
+  .stat .label{font-family:var(--display);font-style:italic;letter-spacing:.1em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold);margin-bottom:6px;}
+  .stat .value{font-family:var(--display);font-weight:500;font-size:1.8rem;color:var(--moonlight);line-height:1;}
+
+  .selfquote{margin:30px 0;padding:24px 8px;text-align:center;position:relative;}
+  .selfquote::before,.selfquote::after{content:"\2736";display:block;color:var(--moon);opacity:.7;font-size:.95rem;}
+  .selfquote::before{margin-bottom:14px;} .selfquote::after{margin-top:14px;}
+  .selfquote p{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.8vw,1.55rem);
+    line-height:1.5;color:var(--moonlight);margin:0 0 10px;text-shadow:0 0 24px rgba(150,180,240,.25);}
+  .selfquote p:last-child{margin-bottom:0;}
+
+  .voices{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:22px;}
+  .voice{background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid rgba(140,160,210,.14);border-left:2px solid var(--moon-deep);
+    border-radius:3px;padding:16px 18px;}
+  .voice .who{font-family:var(--display);font-weight:600;letter-spacing:.06em;color:var(--gold);font-size:1.02rem;margin-bottom:6px;}
+  .voice .said{font-family:var(--display);font-style:italic;color:#cdd6ec;font-size:1.05rem;line-height:1.5;margin:0;}
+
+  @media(max-width:900px){ .voices{grid-template-columns:1fr 1fr;} }
+  @media(max-width:600px){ .voices{grid-template-columns:1fr;} }
+  :focus-visible{outline:2px solid var(--moon);outline-offset:3px;border-radius:2px;}
+</style>
+
+</head>
+<body>
+<div class="shell">
+  <header class="tribe-head">
+    <p class="eyebrow">Die Stämme der Garou</p>
+    <h1>Knochenbeißer</h1>
+    <div class="rule"><span class="line"></span><span class="glyph">&#10038;</span><span class="line r"></span></div>
+    <p class="sub">Die Unterschicht</p>
+  </header>
+  <main>
+    <section class="lead-block">
+      <h2>Einleitung</h2>
+      <div class="under"></div>
+      <p class="lead">Viele verachten die Knochenbeißer als lebenden Beweis dafür, wie tief die Garou gesunken sind. Die Kinder der Ratte sind zerlumpt und glücklos, jagen in Revieren, die kein anderer Stamm will und paaren sich mit Blutsgeschwistern, auf die kein anderer Stamm Anspruch erhebt, sie wirken wie aasfressende Promenadenmischungen, die so viele Verstoßene aufnehmen wie sie nur können. Die Knochenbeißer sehen das ganz anders. Sie sind der größte Stamm der Garou-Nation. Sie geben kein Bild des Versagens ab – sie sind ein Musterbeispiel für Erfolg, denn sie spielen das Spiel des Überlebens.</p>
+      <p>Die eigentlichen Ursprünge des Stammes liegen vermutlich irgendwo in einem Streifen Land zwischen Nordafrika und Indien, doch die Beißer haben schon lange aufgehört, sich über so etwas Gedanken zu machen. Sie haben die Völkerwanderungen der Menschheit mitgemacht und sich dabei immer an die Elenden und Unterdrückten gehängt. Ihre mündliche Überlieferung ist voller revolutionärer Geschichten von Ausgebeuteten, die sich gegen ihre Schinder zur Wehr setzten und sie zu Fall brachten. Die Volkshelden der Knochenbeißer sind Gestalten wie Robin Hood und John Henry - allerdings mit etwas mehr tierhafter Brutalität, wenn es darum geht, Vergeltung und soziale Gerechtigkeit zu üben.</p>
+      <p>Der Ruf des Stammes als Ansammlung von Bastarden wird noch gestützt durch seine scheinbar wirren Traditionen. Seine Septen sind üblicherweise überraschend demokratisch strukturiert. Ihre Fetische und Riten klauen sie sich von Gaia weiß wo zusammen. Sie blühen und gedeihen in den Städten, wo sie sich in zerfallenden Vorstadtbrachen breitmachen, kommen aber auch in heruntergekommenen ländlichen Einöden gut zurecht. Das Credo der Knochenbeißer lautet: „Irgendwas geht immer.“</p>
+      <p>Die Kinder der Ratte haben Zugang zu allerlei interessanten Geheimnissen, weil sie Leute belauschen, die andere Garou als Teil der Herde abtun. Sie haben sich eine Reihe heimtückischer Guerillataktiken angeeignet, die gut zu ihren gefährlichen Lebensumständen passen. Sie wissen, wie man sich Nahrung beschafft oder gar aus dem Müll beschwört. Die größte Schwäche der Beißer ist es, dass die anderen Stämme dazu neigen, sie auf Armeslänge zu halten, weswegen sie nur wenige wahre Verbündete haben. Doch selbst diese Schwäche hat zu ihrer größten Stärke beigetragen, ihrer erzwungenen Autarkie.</p>
+      <p>In ihren Herzen bewahren sie eine sehr alte Tradition. Sie messen einen Garou an seiner Gastfreundschaft und Großzügigkeit - ein Beißer, der sehr wenig hat, aber es bereitwillig teilt, wird ebenso hoch geschätzt wie ein nordischer König, der große Geschenke macht. Sie behandeln ihren Stamm wie eine Familie; ihre Ältesten betrachten „Mutter“ und „Vater“ als ehrenhafteste aller Anreden. Oberflächlich wirken ihre Traditionen wie ein Abbild des kulturellen Flickenteppichs der modernen Kultur - doch im Herzen stehen sie für die Bande, die es Menschen und Garou gestattet haben, so lange zu überleben.</p>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  function reportHeight(){
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    try{ window.parent.postMessage({type:"embed-size", height:h}, "*"); }catch(e){}
+    try{ window.parent.postMessage({"setHeight":h}, "*"); }catch(e){}
+    try{ window.parent.postMessage(h, "*"); }catch(e){}
+  }
+  window.addEventListener("load", reportHeight);
+  window.addEventListener("resize", reportHeight);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(reportHeight); }
+  [150,400,800,1500].forEach(function(t){ setTimeout(reportHeight, t); });
+})();
+</script>
+</body>
+</html>
