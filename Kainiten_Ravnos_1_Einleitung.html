@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravnos — Einleitung</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --measure:900px;        /* <<< BREITE der Spalte. Größer = breiter. Kleiner = schmaler. */
+    --panel:#0d1326;
+    --panel-2:#111a30;
+    --moonlight:#dfe6f6;
+    --mist:#9aa8c6;
+    --mist-dim:#6d7a98;
+    --moon:#c3d2ef;
+    --moon-deep:#5f74a8;
+    --gold:#c9a95f;
+    --gold-dim:#8a7440;
+    --display:'Cormorant Garamond',Georgia,serif;
+    --body:'Spectral',Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:transparent;color:var(--moonlight);font-family:var(--body);
+    font-weight:400;line-height:1.78;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-y:hidden;}
+  .shell{max-width:calc(var(--measure) + 68px);margin:0 auto;padding:clamp(16px,3vw,30px) clamp(14px,3vw,34px) 50px;}
+
+  .tribe-head{max-width:var(--measure);margin:0 auto clamp(24px,4vw,40px);text-align:center;}
+  .eyebrow{font-family:var(--display);font-style:italic;letter-spacing:.24em;text-transform:uppercase;
+    font-size:clamp(.7rem,1.8vw,.86rem);color:var(--gold);margin:0 0 8px;padding-left:.24em;}
+  .tribe-head h1{font-family:var(--display);font-weight:500;letter-spacing:.12em;margin:0;
+    font-size:clamp(2.4rem,6.5vw,4rem);line-height:1;color:var(--moonlight);text-shadow:0 0 30px rgba(150,180,240,.35);}
+  .rule{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 10px;color:var(--gold);}
+  .rule .line{height:1px;width:clamp(40px,10vw,90px);background:linear-gradient(90deg,transparent,var(--gold-dim),var(--gold));}
+  .rule .line.r{background:linear-gradient(90deg,var(--gold),var(--gold-dim),transparent);}
+  .rule .glyph{font-size:1.05rem;filter:drop-shadow(0 0 6px rgba(201,169,95,.5));}
+  .tribe-head .sub{font-family:var(--display);font-style:italic;font-weight:400;letter-spacing:.3em;
+    text-transform:uppercase;font-size:clamp(.75rem,2vw,1.02rem);color:var(--mist);margin:0;padding-left:.3em;}
+
+  main{max-width:var(--measure);margin:0 auto;}
+  section{margin:8px 0 38px;}
+  h2{font-family:var(--display);font-weight:500;font-size:clamp(1.7rem,4vw,2.4rem);
+    letter-spacing:.03em;color:var(--gold);margin:0 0 4px;}
+  h2 + .under{height:1px;background:linear-gradient(90deg,rgba(201,169,95,.5),transparent);margin-bottom:22px;}
+  h3{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.6vw,1.4rem);
+    letter-spacing:.05em;color:var(--moon);margin:26px 0 6px;}
+  p{margin:0 0 18px;color:#cdd6ec;font-weight:400;}
+
+  .lead::first-letter{font-family:var(--display);font-weight:600;float:left;font-size:4.2rem;line-height:.78;
+    padding:6px 12px 0 0;color:var(--gold);text-shadow:0 0 18px rgba(201,169,95,.35);}
+
+  .stats{display:flex;gap:16px;flex-wrap:wrap;margin:24px 0 6px;}
+  .stat{flex:1 1 220px;background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid rgba(201,169,95,.22);border-radius:3px;padding:18px 20px;}
+  .stat .label{font-family:var(--display);font-style:italic;letter-spacing:.1em;text-transform:uppercase;
+    font-size:.74rem;color:var(--gold);margin-bottom:6px;}
+  .stat .value{font-family:var(--display);font-weight:500;font-size:1.8rem;color:var(--moonlight);line-height:1;}
+
+  .selfquote{margin:30px 0;padding:24px 8px;text-align:center;position:relative;}
+  .selfquote::before,.selfquote::after{content:"\2736";display:block;color:var(--moon);opacity:.7;font-size:.95rem;}
+  .selfquote::before{margin-bottom:14px;} .selfquote::after{margin-top:14px;}
+  .selfquote p{font-family:var(--display);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.8vw,1.55rem);
+    line-height:1.5;color:var(--moonlight);margin:0 0 10px;text-shadow:0 0 24px rgba(150,180,240,.25);}
+  .selfquote p:last-child{margin-bottom:0;}
+
+  .voices{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:22px;}
+  .voice{background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid rgba(140,160,210,.14);border-left:2px solid var(--moon-deep);
+    border-radius:3px;padding:16px 18px;}
+  .voice .who{font-family:var(--display);font-weight:600;letter-spacing:.06em;color:var(--gold);font-size:1.02rem;margin-bottom:6px;}
+  .voice .said{font-family:var(--display);font-style:italic;color:#cdd6ec;font-size:1.05rem;line-height:1.5;margin:0;}
+
+  @media(max-width:900px){ .voices{grid-template-columns:1fr 1fr;} }
+  @media(max-width:600px){ .voices{grid-template-columns:1fr;} }
+  :focus-visible{outline:2px solid var(--moon);outline-offset:3px;border-radius:2px;}
+</style>
+
+</head>
+<body>
+<div class="shell">
+  <header class="tribe-head">
+    <p class="eyebrow">Die Clans der Kainiten</p>
+    <h1>Ravnos</h1>
+    <div class="rule"><span class="line"></span><span class="glyph">&#10038;</span><span class="line r"></span></div>
+    <p class="sub">Der Clan der Wanderer</p>
+  </header>
+  <main>
+    <section class="lead-block">
+      <h2>Einleitung</h2>
+      <div class="under"></div>
+      <p class="lead">Die Ravnos bewegen sich wie die Gerüchte, die sie umgeben. Sie sind die Diebe in der Nacht, die raksha, die der Wind vor sich her treibt, der Albtraum, der zu schlimm ist, um wahr zu sein. Ob sie sie nun mit den Romani Europas oder den leichenfressenden Ghulen Westasiens in Verbindung bringt, die Gesellschaft der Kainskinder hat Vorurteile gegen die Ravnos und sieht sie als unrein, verdorben und böse an.</p>
+      <p>Angesichts eines solchen Rufs gelten die Ravnos selbst unter den Kainskinder als Außenseiter, die keiner Sekte angehören. Viele junge Ravnos führen ein nomadisches Unleben, ziehen von Domäne zu Domäne oder verbergen sich am Rand etablierter Territorien, wo sie schnell wegkommen, wenn sich die Stimmung der ortsansässigen Kainskinder gegen sie wendet. Das unterstreicht noch ihren Ruf als Nicht-Sesshafte, Zigeuner und umherziehende Landplagen, aber Ravnos-Vampire sind anpassungsfähig und gedeihen in ihrer Randgruppen-Existenz. Tatsächlich stilisieren sich viele zu den beutegierigen Schrecken, für die andere Kainskinder sie halten. Die aufgeklärteren Ravnos hängen einer Clansideologie an, die sich am Rad der Wiedergeburt orientiert, das aus vielen indischen Religionen bekannt ist.</p>
+      <p>Manchen jungen, prinzipienlosen Mitgliedern des Clans jedoch dient diese Philosophie als Vorwand für Launenhaftigkeit oder Entschuldigung für chaotisches Verhalten. Diese letzteren Kainskinder sind es, die dem Ruf der Ravnos so sehr schaden, aber selbst die Frommen unter ihnen erscheinen vielen anderen Vampiren als bizarr.</p>
+      <p>Die Ravnos praktizieren eine einzigartige Disziplin namens Schimären, die ihre Feinde Dinge sehen lässt, die gar nicht da sind. Die Disziplin Schimären trägt viel zur Überzeugung anderer Kainskinder bei, dass Ravnos Geschäfte mit Lügen und Irreführung machen, kann sich aber auch als Rettung für die Scharlatane erweisen und das Unleben als Ausgestoßener erleichtern.</p>
+      <p>Der Clan führt sich auf den geheimnisvollen Zapathasura zurück, um dessen Entstehung sich viele Geschichten ranken und dessen Existenz selbst unter den sterblichen Sinti und Roma Stoff vieler alter Geschichten und Legenden ist, da keiner so genau sagen kann, wer dieser geheimnisvolle Kainit wirklich gewesen ist.</p>
+    </section>
+  </main>
+</div>
+<script>
+(function(){
+  function reportHeight(){
+    var h = Math.ceil(document.documentElement.getBoundingClientRect().height);
+    try{ window.parent.postMessage({type:"embed-size", height:h}, "*"); }catch(e){}
+    try{ window.parent.postMessage({"setHeight":h}, "*"); }catch(e){}
+    try{ window.parent.postMessage(h, "*"); }catch(e){}
+  }
+  window.addEventListener("load", reportHeight);
+  window.addEventListener("resize", reportHeight);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(reportHeight); }
+  [150,400,800,1500].forEach(function(t){ setTimeout(reportHeight, t); });
+})();
+</script>
+</body>
+</html>
